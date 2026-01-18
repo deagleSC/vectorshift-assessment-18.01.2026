@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 262 83% 58%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 40% 98%;
+    --card: 224 71% 8%;
+    --card-foreground: 210 40% 98%;
+    --popover: 224 71% 8%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 10% 64%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 262 83% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html, body, #root {
+    @apply h-full;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  /* ReactFlow customizations */
+  .react-flow__node {
+    @apply !shadow-none;
+  }
+  
+  .react-flow__handle {
+    @apply !w-2.5 !h-2.5 !border-2 !border-white transition-all duration-150;
+  }
+  
+  .react-flow__handle:hover {
+    @apply !scale-110;
+  }
+  
+  .react-flow__handle.source {
+    @apply !bg-primary;
+  }
+  
+  .react-flow__handle.target {
+    @apply !bg-slate-400;
+  }
+  
+  .react-flow__edge-path {
+    @apply stroke-[1.5px];
+  }
+  
+  .react-flow__edge.selected .react-flow__edge-path {
+    @apply stroke-primary;
+  }
+  
+  .react-flow__controls {
+    @apply !bg-white !border !border-slate-200 !rounded-lg !shadow-sm overflow-hidden;
+  }
+  
+  .react-flow__controls-button {
+    @apply !bg-white !border-0 !border-b !border-slate-100 hover:!bg-slate-50 transition-colors;
+  }
+  
+  .react-flow__controls-button:last-child {
+    @apply !border-b-0;
+  }
+  
+  .react-flow__controls-button svg {
+    @apply !fill-slate-600;
+  }
+  
+  .react-flow__minimap {
+    @apply !bg-white !border !border-slate-200 !rounded-lg !shadow-sm overflow-hidden;
+  }
+}
+
+code {
+  font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
