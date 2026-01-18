@@ -11,10 +11,11 @@ dist/
 
 # Environment files
 .env
-.env.local
-.env.*.local
-frontend/.env
-backend/.env
+.env.*
+!.env.example
+*.local
+frontend/.env*
+backend/.env*
 
 # IDE
 .idea/
