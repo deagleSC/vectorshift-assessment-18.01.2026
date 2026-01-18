@@ -23,7 +23,8 @@ export const SubmitButton = () => {
     setError(null);
     
     try {
-      const response = await fetch('http://localhost:8000/pipelines/parse', {
+      const API_URL = process.env.REACT_APP_API_URL || 'https://vectorshift-pipeline-api-1066352068133.asia-south1.run.app';
+      const response = await fetch(`${API_URL}/pipelines/parse`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
